@@ -1,18 +1,23 @@
 // Un alert espone 5 numeri casuali. Da li parte un timer di 30 secondi.
 // Dopo 30 secondi l'utente deve inserire un prompt alla volta i numeri che ha visto precedentemente. Dopo che
 // sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
-var a = numeriRandom(1,100);
-var b = numeriRandom(1,100);
-var c = numeriRandom(1,100);
-var d = numeriRandom(1,100);
-var e = numeriRandom(1,100);
-var numeriGenerati = [a,b,c,d,e];
+
+var numeriGenerati = [];
+while ( numeriGenerati.length < 5 ){
+
+  var random = numeriRandom(1,100);
+  if ( !numeriGenerati.includes(random) ){
+    numeriGenerati.push(random);
+  }
+}
+alert(numeriGenerati);
+console.log(numeriGenerati);
+
+
 var numeriInseriti = [];
 var numeriIndovinati;
 var numeriCorretti = [];
 
-alert(numeriGenerati);
-console.log(numeriGenerati);
 
 
 setTimeout(indovinaNumeri, 5000);
