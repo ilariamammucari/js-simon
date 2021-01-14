@@ -31,9 +31,12 @@ function indovinaNumeri(){
     if ( (numeriGenerati.includes(utente)) && (!numeriCorretti.includes(utente)) ){
       numeriCorretti.push(utente);
       var numeriIndovinati = numeriCorretti.length;
+    } else if ( numeriCorretti.length == 0 ){
+      numeriIndovinati = 0;
+      numeriCorretti = 'Mi dispiace non hai indovinato nessun numero..'
     }
 
   }
   console.log(numeriCorretti);
-  document.getElementById('gioco').innerHTML = 'Complimenti hai indoviunato ' + numeriIndovinati + ' numeri/o! I/Il numeri/o indovinati/o sono/è: ' + numeriCorretti;
+  document.getElementById('gioco').innerHTML = 'Hai indovinato ' + numeriIndovinati + ' numeri/o! I/Il numeri/o indovinati/o sono/è: ' + numeriCorretti;
 }
