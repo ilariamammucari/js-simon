@@ -3,15 +3,22 @@
 // sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
 var numeriGenerati = [numeriRandom(1,100),numeriRandom(1,100),numeriRandom(1,100),numeriRandom(1,100),numeriRandom(1,100)];
-var numeriCorretti = [];
-
 alert(numeriGenerati);
 console.log(numeriGenerati);
 
+setTimeout(indovinaNumeri, 1000);
 
 
-setTimeout(function(){
 
+
+
+// ****funzioni
+function numeriRandom(min, max){
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+function indovinaNumeri(){
+  var numeriCorretti = [];
   for ( var i = 0; i < 5; i++){
 
     var utente = parseInt(prompt('Inserisci un numero che si trova in un intervallo tra 1 e 100'));
@@ -29,13 +36,4 @@ setTimeout(function(){
   }
   console.log(numeriCorretti);
   document.getElementById('gioco').innerHTML = 'Complimenti hai indoviunato ' + numeriIndovinati + ' numeri/o! I/Il numeri/o indovinati/o sono/è: ' + numeriCorretti;
-}, 1000);//ho messo un secondo per comodità
-
-
-
-
-
-// ****funzioni
-function numeriRandom(min, max){
-  return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
